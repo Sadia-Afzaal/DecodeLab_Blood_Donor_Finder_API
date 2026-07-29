@@ -1,0 +1,349 @@
+{
+  "info": {
+    "_postman_id": "b0e72e6f-6ec2-4446-82c2-6af2f547d014",
+    "name": "Blood Donor Finder API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56984811",
+    "_collection_link": "https://go.postman.co/collection/56984811-b0e72e6f-6ec2-4446-82c2-6af2f547d014?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Health Check ✅",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Donor ➕",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Ayesha Khan\",\r\n  \"bloodGroup\": \"O+\",\r\n  \"city\": \"Lahore\",\r\n  \"contact\": \"03001234567\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Donors 📋",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Donors by Filters 🔍",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/donors?bloodGroup=O+&city=Lahore&availableOnly=true",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ],
+          "query": [
+            {
+              "key": "bloodGroup",
+              "value": "O+"
+            },
+            {
+              "key": "city",
+              "value": "Lahore"
+            },
+            {
+              "key": "availableOnly",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Donor by ID 🔎",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/donors/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Availability 🔄",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"available\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/donors/:id/availability",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors",
+            ":id",
+            "availability"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Donor 🗑️",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/donors/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Validation Error Tests-Missing Contact",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Ali\",\r\n  \"bloodGroup\": \"O+\",\r\n  \"city\": \"Karachi\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Validation Error Tests - Invalid Blood Group",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Ali\",\r\n  \"bloodGroup\": \"X+\",\r\n  \"city\": \"Karachi\",\r\n  \"contact\": \"03001234567\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Invalid Contact Format",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Ali\",\r\n  \"bloodGroup\": \"O+\",\r\n  \"city\": \"Karachi\",\r\n  \"contact\": \"12345\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Empty Name",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"\",\r\n  \"bloodGroup\": \"O+\",\r\n  \"city\": \"Karachi\",\r\n  \"contact\": \"03001234567\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Multiple Validation Errors",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"\",\r\n  \"bloodGroup\": \"Z+\",\r\n  \"city\": \"\",\r\n  \"contact\": \"123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
