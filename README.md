@@ -17,6 +17,17 @@ npm start
 
 Server runs on `http://localhost:5000` by default.
 
+## 📦 Postman Collection
+
+You can import the [Postman Collection](postman/Blood%20Donor%20Finder%20API.postman_collection) to test all endpoints instantly.
+
+### How to Use:
+1. Download the `Blood Donor Finder API.postman_collection` file from the `postman` folder
+2. Open Postman
+3. Click **Import** → **Upload Files**
+4. Select the JSON file
+5. All endpoints will be ready to test!
+
 ## Endpoints
 
 ### Register a donor
@@ -89,22 +100,25 @@ Responses:
 blood-donor-finder-api/
 ├── server.js
 ├── src/
-│   ├── app.js
-│   ├── config/
-│   │   └── constants.js
-│   ├── models/
-│   │   └── donorModel.js
-│   ├── controllers/
-│   │   └── donorController.js
-│   ├── routes/
-│   │   └── donorRoutes.js
-│   ├── middleware/
-│   │   ├── validateDonor.js
-│   │   ├── validateAvailability.js
-│   │   └── errorHandler.js
-│   └── utils/
-│       ├── asyncHandler.js
-│       └── ApiError.js
+│ ├── app.js
+│ ├── config/
+│ │ └── constants.js
+│ ├── models/
+│ │ └── donorModel.js
+│ ├── controllers/
+│ │ └── donorController.js
+│ ├── routes/
+│ │ └── donorRoutes.js
+│ ├── middleware/
+│ │ ├── validateDonor.js
+│ │ ├── validateAvailability.js
+│ │ └── errorHandler.js
+│ └── utils/
+│ ├── asyncHandler.js
+│ └── ApiError.js
+├── postman/
+│ └── Blood Donor Finder API.postman_collection
 ├── package.json
+├── package-lock.json
 └── .gitignore
 ```
